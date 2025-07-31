@@ -822,7 +822,7 @@ io.on("connection", (socket) => {
   })
 
 })
-
-server.listen(3001, () => {
-  console.log("Socket.IO server running on port 3001")
+const port=process.env.PORT;
+server.listen(port, () => {
+  console.log(`Socket.IO server running on port ${port}`)
 })
