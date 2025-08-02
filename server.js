@@ -2,7 +2,10 @@ const { Server } = require("socket.io")
 const http = require("http")
 const crypto = require("crypto")
 
-const server = http.createServer()
+const server = http.createServer((req, res) => {
+  res.writeHead(200);
+  res.end("WebSocket Server Running");
+});
 const io = new Server(server, {
   cors: {
     origin: "*",
